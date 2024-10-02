@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Nike Air Max 270",
+        "price": 150,
+        "description": "Las Nike Air Max 270 combinan comodidad y estilo con una unidad Air Max visible en el talón. Ideal para el uso diario y con un diseño moderno.",
+        "eliminado": true
+    },
+    {
+        "name": "Adidas Ultraboost 22",
+        "price": 180,
+        "description": "Las Adidas Ultraboost 22 ofrecen una amortiguación superior con su tecnología Boost y una parte superior de malla transpirable para una carrera más cómoda."
+    },
+    {
+        "name": "Puma RS-X3",
+        "price": 130,
+        "description": "El Puma RS-X3 es conocido por su diseño llamativo y su gran comodidad. Con una suela gruesa y un diseño retro, es perfecto para los amantes de la moda."
+    },
+    {
+        "name": "Converse Chuck Taylor All Star",
+        "price": 60,
+        "description": "Un clásico en el mundo de las zapatillas, las Converse Chuck Taylor All Star ofrecen un estilo icónico y versatilidad con su diseño atemporal de lona."
+    },
+    {
+        "name": "New Balance 990v5",
+        "price": 175,
+        "description": "Las New Balance 990v5 son conocidas por su confort y soporte, con una construcción de alta calidad y tecnología de amortiguación para el día a día."
+    },
+    {
+        "name": "Asics Gel-Kayano 28",
+        "price": 160,
+        "description": "Las Asics Gel-Kayano 28 están diseñadas para corredores que buscan soporte y estabilidad, con tecnología de gel para una excelente amortiguación."
+    },
+    {
+        "name": "Saucony Triumph 19",
+        "price": 140,
+        "description": "Las Saucony Triumph 19 ofrecen una gran amortiguación y soporte con su tecnología PWRRUN+, ideales para largas distancias y comodidad durante todo el día."
+    },
+    {
+        "name": "Vans Old Skool",
+        "price": 65,
+        "description": "Las Vans Old Skool son conocidas por su estilo clásico y durabilidad. Con una parte superior de lona y gamuza, son perfectas para un look casual."
+    },
+    {
+        "name": "Reebok Nano X3",
+        "price": 140,
+        "description": "Las Reebok Nano X3 están diseñadas para entrenamiento y crossfit, con una suela resistente y una gran estabilidad para ejercicios intensos."
+    },
+    {
+        "name": "Nike SB Dunk Low",
+        "price": 120,
+        "description": "Las Nike SB Dunk Low combinan estilo y confort con un diseño bajo y una variedad de colores llamativos, perfectas para los entusiastas del skate."
+    },
+    {
+        "name": "Adidas NMD R1",
+        "price": 130,
+        "description": "Las Adidas NMD R1 ofrecen un estilo moderno y un ajuste cómodo con su tecnología Boost y su diseño minimalista."
+    },
+    {
+        "name": "Under Armour HOVR Phantom 3",
+        "price": 150,
+        "description": "Las Under Armour HOVR Phantom 3 ofrecen una amortiguación excepcional y un ajuste ajustado, ideales para corredores que buscan comodidad y rendimiento."
+    },
+    {
+        "name": "Nike React Infinity Run Flyknit",
+        "price": 160,
+        "description": "Las Nike React Infinity Run Flyknit proporcionan una amortiguación suave y un soporte estable con una parte superior de Flyknit transpirable."
+    },
+    {
+        "name": "Adidas Superstar",
+        "price": 85,
+        "description": "Un clásico atemporal, las Adidas Superstar ofrecen un diseño de cuero blanco con la icónica puntera de goma. Versátiles y siempre a la moda."
+    },
+    {
+        "name": "Puma Future Rider",
+        "price": 110,
+        "description": "Las Puma Future Rider combinan un diseño retro con tecnología moderna, ofreciendo confort y estilo en cada paso."
+    },
+    {
+        "name": "Hoka One One Bondi 8",
+        "price": 180,
+        "description": "Las Hoka One One Bondi 8 ofrecen una máxima amortiguación y un ajuste cómodo, ideales para corredores que buscan una carrera suave y protegida."
+    },
+    {
+        "name": "New Balance Fresh Foam 1080v12",
+        "price": 160,
+        "description": "Las New Balance Fresh Foam 1080v12 proporcionan una experiencia de carrera lujosa con una gran amortiguación y una parte superior adaptable."
+    },
+    {
+        "name": "On Cloudstratus",
+        "price": 170,
+        "description": "Las On Cloudstratus están diseñadas para ofrecer un retorno de energía óptimo y una sensación de ligereza, con una suela innovadora para una carrera eficiente."
+    },
+    {
+        "name": "Skechers GOwalk 6",
+        "price": 120,
+        "description": "Las Skechers GOwalk 6 están diseñadas para caminar con comodidad, ofreciendo una amortiguación ligera y una parte superior flexible."
+    }
+]
