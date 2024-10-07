@@ -1,12 +1,14 @@
 import express from "express"
 import ProductoRoute from "./routes/productos.routes.js"
 import ApiRoute from "./api/routes/productos.routes.js"
-
+import ApiUsuario from "./api/routes/usuarios.routes.js"
 const app = express()
 app.use( express.urlencoded({ extended: true }) )
 app.use( express.json() )
 
 app.use("/api",ApiRoute)
+app.use("/api",ApiUsuario)
+
 app.use(ProductoRoute)
 
 app.listen(2024, () => console.log("Ready"))
