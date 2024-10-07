@@ -21,6 +21,10 @@ async function getProductos( filtros = {} ){
     if( filtros.descripcion !== undefined ){
         filterMongo.$text = { $search: filtros.descripcion }
     }
+
+    if( filtros.categoria !== undefined ){
+        filterMongo.categoria = { $eq: filtros.categoria }
+    }
     console.log(filtros)
     await cliente.connect()
     return db.collection("zapatillas").find(filterMongo).toArray()
