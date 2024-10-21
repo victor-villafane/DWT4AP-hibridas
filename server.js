@@ -1,11 +1,18 @@
 import express from "express"
+import cors from "cors"
 import ProductoRoute from "./routes/productos.routes.js"
 import ApiRoute from "./api/routes/productos.routes.js"
 import ApiUsuario from "./api/routes/usuarios.routes.js"
 const app = express()
+
+const corsOptions = {
+    origin: "http://localhost:5173",
+    methods: "GET, POST"
+}
+
 app.use( express.urlencoded({ extended: true }) )
 app.use( express.json() )
-
+app.use( cors(corsOptions) )
 app.use("/api",ApiRoute)
 app.use("/api",ApiUsuario)
 
