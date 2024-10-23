@@ -1,4 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb"
+import bcrypt from "bcrypt"
 
 const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4ap.4rluh.mongodb.net/")
 const db = cliente.db("DWT4AP")
@@ -10,8 +11,20 @@ export async function getUsuarios(){
 
 export async function agregarUsuario(usuario){
     await cliente.connect()
-    await db.collection("usuarios").insertOne(usuario)
-    return usuario
+
+    const existe = await db.collection("usuarios").findOne({ email: usuario.email })
+        
+    if( existe ) {
+        throw new Error("Cuenta Ya Existe")
+    }    
+
+    const usuarioNuevo = { ...usuario }     //hice una copia
+    
+    usuarioNuevo.password = await bcrypt.hash( usuario.password, 60)
+
+    await db.collection("usuarios").insertOne(usuarioNuevo)
+
+    return usuarioNuevo
 }
 
 export async function borrarUsuario(id){
@@ -19,22 +32,23 @@ export async function borrarUsuario(id){
     return db.collection("usuarios").updateOne( {_id: ObjectId.createFromHexString(id)}, { $set: {eliminado: true} } )
 }
 
-// export async function agregarCarrito(idUsuario, producto){
-//     await cliente.connect()
-//     const usuario = await db.collection("usuarios").findOne({ _id: ObjectId.createFromHexString(idUsuario) })
-//     if( usuario.carrito == undefined ){
-//         usuario.carrito = []
-//     }
-//     console.log("Usuario encontrado", usuario)
-//     const productoCompleto = await db.collection( "zapatillas" ).findOne({ _id: ObjectId.createFromHexString(producto._id) })
-//     console.log("Producto encontrado", productoCompleto)
-//     usuario.carrito.push( productoCompleto ) // [] lo pueden ... 
+export async function login(usuario){
+        await cliente.connect()
 
-//     const resultado = await db.collection( "usuarios" ).replaceOne({_id: ObjectId.createFromHexString(idUsuario) }, usuario)
+        const existe = await db.collection("usuarios").findOne({ email: usuario.email })
+        
+        if( !existe ) {
+            throw new Error(" No me pude loguear ")
+        }
 
-//     return resultado
-// }
+        const esValido = await bcrypt.compare( usuario.password, existe.password )
 
+        if( !esValido ) {
+            throw new Error(" No me pude loguear ")
+        }
+
+        return { ...existe, password: undefined }
+}
 export async function agregarCarrito(idUsuario, producto){
     await cliente.connect()
     const productoCompleto = await db.collection( "zapatillas" ).findOne({ _id: ObjectId.createFromHexString(producto._id) })

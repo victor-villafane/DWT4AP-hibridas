@@ -28,3 +28,9 @@ export function agregarCarrito(req, res){
         .then( usuario => res.status(201).json(usuario) )
         .catch( () => res.status(404).json({ mensaje: "No se pudo agregar a carrito" }) )
 }
+
+export function login(req, res){
+    service.login(req.body)
+        .then( (usuario) => res.status(200).json(usuario))
+        .catch( (error) => res.status(400).json( { message: error.message } ) )
+}
