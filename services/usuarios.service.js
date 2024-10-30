@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb"
 import bcrypt from "bcrypt"
+import { crearToken } from "./token.service.js";
 
 const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4ap.4rluh.mongodb.net/")
 const db = cliente.db("DWT4AP")
@@ -20,7 +21,7 @@ export async function agregarUsuario(usuario){
 
     const usuarioNuevo = { ...usuario }     //hice una copia
     
-    usuarioNuevo.password = await bcrypt.hash( usuario.password, 60)
+    usuarioNuevo.password = await bcrypt.hash( usuario.password, 10)
 
     await db.collection("usuarios").insertOne(usuarioNuevo)
 
@@ -47,7 +48,9 @@ export async function login(usuario){
             throw new Error(" No me pude loguear ")
         }
 
-        return { ...existe, password: undefined }
+        const token = await crearToken(existe)
+
+        return { ...existe,token: token, password: undefined }
 }
 export async function agregarCarrito(idUsuario, producto){
     await cliente.connect()
